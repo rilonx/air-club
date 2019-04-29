@@ -1,0 +1,46 @@
+<div class="card text-white bg-dark" *ngIf="plane">
+  <h5 class="card-header">Самолет:</h5>
+  <div class="card-body">
+    <dynamic-form [model]="plane"
+                  [fields]="planeFields"
+                  [operation]="operation"
+                  [errorMessage]="errorMessage"
+                  (create)="create($event)"
+                  (update)="update($event)">
+    </dynamic-form>
+  </div>
+</div>
+<div *ngIf="operation === Operations.read">
+
+  <h5 style="margin-top: 20px">Пилоты самолета:</h5>
+
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Код</th>
+      <th scope="col">Номер</th>
+      <th scope="col">ФИО</th>
+      <th scope="col">Адрес</th>
+      <th style="text-align: right">
+        <button (click)="addPilot()"
+                class="btn btn-sm btn-primary">Добавить
+        </button>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pilot of pilotList">
+      <td>{{ pilot.code }}</td>
+      <td>{{ pilot.number }}</td>
+      <td>{{ pilot.fio }}</td>
+      <td>{{ pilot.address }}</td>
+      <td style="text-align: right" *ngIf="!isRemoving">
+        <button class="btn btn-sm btn-danger" style="margin-right: 5px" (click)="removePilot(pilot)">Удалить</button>
+      </td>
+      <td style="text-align: right" *ngIf="isRemoving">
+        Удаление ...
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

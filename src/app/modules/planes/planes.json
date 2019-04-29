@@ -1,0 +1,49 @@
+{
+  "planes": [
+    {
+      "id": 1,
+      "code": "172N",
+      "type": "одиночный пропеллер",
+      "number": "BA123",
+      "brand": "Cessna",
+      "model": "Skyhawk",
+      "pilots": []
+    },
+    {
+      "id": 2,
+      "code": "172SP",
+      "type": "одиночный пропеллер",
+      "number": "N308SP",
+      "brand": "Cessna",
+      "model": "Skyhawk SP",
+      "pilots": []
+    },
+    {
+      "id": 3,
+      "code": "172RG",
+      "type": "одиночный пропеллер",
+      "number": "RA-2563G",
+      "brand": "Cessna",
+      "model": "172RG",
+      "pilots": []
+    },
+    {
+      "id": 4,
+      "code": "174A",
+      "type": "одиночный пропеллер",
+      "number": "MCX0027",
+      "brand": "Cessna",
+      "model": "CUTLASS",
+      "pilots": []
+    },
+    {
+      "id": 5,
+      "code": "172R",
+      "type": "одиночный пропеллер",
+      "number": "N397ES",
+      "brand": "Cessna",
+      "model": "172R",
+      "pilots": []
+    }
+  ]
+}

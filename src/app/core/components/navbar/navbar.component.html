@@ -1,0 +1,24 @@
+<!-- navbar start -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav mr-auto">
+    <li *ngFor="let item of menuItems" class="nav-item" [ngClass]="markActiveItem(item)">
+      <a class="nav-link"
+        (click)="navigate(item.route)">{{ item.text }}
+      </a>
+    </li>
+  </ul>
+  <div ngbDropdown class="navbar-nav">
+    <div class="nav-item">
+      <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>{{ user.username }}</a>
+      <!--<a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Профиль</a>-->
+      <ul ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <li>
+          <a ngbDropdownItem (click)="onLogout()">
+            <i class="fa fa-sign-out"></i> Выйти
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navbar end-->

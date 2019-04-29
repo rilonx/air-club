@@ -1,0 +1,102 @@
+{
+  "airports": [
+    {
+      "id": 1,
+      "code": "DME",
+      "name": "Аэропорт Домодедово",
+      "address": "Домодедово",
+      "planes": [
+        {
+          "id": 2,
+          "code": "172SP",
+          "type": "одиночный пропеллер",
+          "number": "N308SP",
+          "brand": "Cessna",
+          "model": "Skyhawk SP",
+          "pilots": []
+        }
+      ],
+      "pilots": []
+    },
+    {
+      "id": 2,
+      "code": "VNK",
+      "name": "Аэропорт Внуково",
+      "address": "Внучка",
+      "planes": [],
+      "pilots": []
+    },
+    {
+      "id": 3,
+      "code": "ABH",
+      "name": "Альфа",
+      "address": "Австралия, Alpha",
+      "planes": [],
+      "pilots": []
+    },
+    {
+      "id": 4,
+      "code": "ABI",
+      "name": "Municipal",
+      "address": "США, Abilene",
+      "planes": [],
+      "pilots": []
+    },
+    {
+      "id": 5,
+      "code": "ABJ",
+      "name": "Felix Houphouet Boigny",
+      "address": "Кот д’Ивуар, Абиджан",
+      "planes": [],
+      "pilots": []
+    },
+    {
+      "id": 6,
+      "code": "ABK",
+      "name": "Кабри-Дар",
+      "address": "Эфиопия, Кабри-Дар",
+      "planes": [],
+      "pilots": []
+    },
+    {
+      "id": 7,
+      "code": "ABL",
+      "name": "Амблер",
+      "address": "США, Ambler",
+      "planes": [],
+      "pilots": []
+    },
+    {
+      "id": 8,
+      "code": "ABM",
+      "name": "Bamaga Injinoo",
+      "address": "Австралия, Bamaga, Queensland",
+      "planes": [],
+      "pilots": []
+    },
+    {
+      "id": 9,
+      "code": "ABW",
+      "name": "Абау",
+      "address": "Папуа — Новая Гвинея, Абау",
+      "planes": [],
+      "pilots": []
+    },
+    {
+      "id": 10,
+      "code": "AUB",
+      "name": "Itauba",
+      "address": "Бразилия, Itauba",
+      "planes": [],
+      "pilots": []
+    },
+    {
+      "id": 11,
+      "code": "BAX",
+      "name": "Барнаул",
+      "address": "Россия, Барнаул",
+      "planes": [],
+      "pilots": []
+    }
+  ]
+}

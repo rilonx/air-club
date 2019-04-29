@@ -1,0 +1,69 @@
+<h3>Аэропорты:</h3>
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Код</th>
+    <th scope="col">Наименование</th>
+    <th scope="col">Адрес</th>
+    <th style="text-align: right">
+      <button *isRole="['admin']"
+              (click)="add()"
+              class="btn btn-sm btn-primary">Добавить
+      </button>
+    </th>
+  </tr>
+  </thead>
+  <tbody *ngIf="list.length > 0">
+  <tr *ngFor="let listItem of list">
+    <td>{{ listItem.code }}</td>
+    <td>{{ listItem.name }}</td>
+    <td>{{ listItem.address }}</td>
+    <td style="text-align: right" *ngIf="listItem.id !== removeId">
+      <button
+        class="btn btn-sm btn-dark"
+        style="margin-right: 5px"
+        (click)="display(listItem)">Подробнее
+      </button>
+      <button
+        *isRole="['admin']"
+        class="btn btn-sm btn-dark"
+        style="margin-right: 5px"
+        (click)="edit(listItem)">Редактировать
+      </button>
+      <button
+        *isRole="['admin']"
+        class="btn btn-sm btn-danger"
+        (click)="removeQuestion(listItem)">Удалить
+      </button>
+    </td>
+    <td style="text-align: right" *ngIf="listItem.id === removeId && !isRemoving">
+      Удалить?
+      <button class="btn btn-sm btn-danger" style="margin-right: 5px" (click)="remove(listItem)">Удалить</button>
+      <button class="btn btn-sm btn-light" style="margin-right: 5px" (click)="cancelRemove(listItem)">Отмена</button>
+      <p *ngIf="removeError">{{ removeError }}</p>
+    </td>
+    <td style="text-align: right" *ngIf="listItem.id === removeId && isRemoving">
+      Удаление ...
+    </td>
+  </tr>
+  </tbody>
+  <tbody *ngIf="list.length === 0">
+  <tr>
+    <td>Нет записей</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize"
+                  [(page)]="page"
+                  [pageSize]="pageSize">
+  </ngb-pagination>
+
+  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+    <option [ngValue]="5">5 записей на странице</option>
+    <option [ngValue]="10">10 записей на странице</option>
+    <option [ngValue]="20">20 записей на странице</option>
+  </select>
+</div>

@@ -1,0 +1,12 @@
+<div class="card text-white bg-dark" *ngIf="pilot">
+  <h5 class="card-header">Пилот:</h5>
+  <div class="card-body">
+    <dynamic-form [model]="pilot"
+                  [fields]="pilotFields"
+                  [operation]="operation"
+                  [errorMessage]="errorMessage"
+                  (create)="create($event)"
+                  (update)="update($event)">
+    </dynamic-form>
+  </div>
+</div>

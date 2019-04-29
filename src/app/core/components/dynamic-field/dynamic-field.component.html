@@ -1,0 +1,26 @@
+<div [hidden]="operation == Operations.create && field.isId" [formGroup]="form">
+  <div [ngSwitch]="field.type"  class="form-group">
+    <div *ngSwitchCase="'text'">
+      <label class="form-control-label" [for]="field.name">{{ field.label }}</label>
+      <input class="form-control"
+             [id]="field.name"
+             autocomplete="off"
+             [formControlName]="field.name"
+             [readonly]="operation == Operations.read || field.isId"
+             type="text">
+    </div>
+
+    <div *ngSwitchCase="'number'">
+      <label class="form-control-label" [for]="field.name">{{ field.label }}</label>
+      <input class="form-control"
+             [id]="field.name"
+             autocomplete="off"
+             [formControlName]="field.name"
+             [readonly]="operation == Operations.read || field.isId"
+             type="number">
+    </div>
+    <div *ngIf="form.get(field.name).hasError('required') && (submitted || form.get(field.name).touched)">
+      Поле обязательное для заполнения
+    </div>
+  </div>
+</div>

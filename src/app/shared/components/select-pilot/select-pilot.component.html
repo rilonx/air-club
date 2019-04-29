@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Привязка Пилота</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body" style="min-height: 100px">
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <select class="custom-select" style="width: auto" name="selectPilot" [(ngModel)]="pilotId">
+          <option *ngFor="let item of pilotList" [value]="item.id">
+            {{item.code}} - {{item.number}} {{item.fio}} : {{item.address}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="save()">Сохранить</button>
+</div>

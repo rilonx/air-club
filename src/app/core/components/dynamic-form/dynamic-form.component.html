@@ -1,0 +1,27 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div *ngFor="let field of fields">
+    <dynamic-field [field]="field"
+                   [form]="form"
+                   [operation]="operation"
+                   [submitted]="submitted">
+    </dynamic-field>
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  <div *ngIf="status !== QueryStatus.pending">
+    <div *ngIf="operation === Operations.read">
+      <button class="btn btn-sm btn-primary" (click)="onBack()">Назад</button>
+      <button *isRole="['admin']" class="btn btn-sm btn-success" (click)="onEdit()">Редактировать</button>
+    </div>
+    <div *ngIf="operation === Operations.edit">
+      <button class="btn btn-sm btn-primary" (click)="onCancel()">Отмена</button>
+      <button *isRole="['admin']" class="btn btn-sm btn-success" (click)="onSave()">Сохранить</button>
+    </div>
+    <div *ngIf="operation === Operations.create">
+      <button class="btn btn-sm btn-primary" (click)="onBack()">Назад</button>
+      <button *isRole="['admin']" class="btn btn-sm btn-success" (click)="onCreate()">Создать</button>
+    </div>
+  </div>
+  <div *ngIf="status === QueryStatus.pending">
+    Сохранение ...
+  </div>
+</form>
