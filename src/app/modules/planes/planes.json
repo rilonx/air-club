@@ -44,6 +44,60 @@
       "brand": "Cessna",
       "model": "172R",
       "pilots": []
+    },
+    {
+      "id": 6,
+      "code": "28R-7803259",
+      "type": "одиночный пропеллер",
+      "number": "SP-KMR",
+      "brand": "Piper",
+      "model": "Arrow III Turbo",
+      "pilots": []
+    },
+    {
+      "id": 7,
+      "code": "2844047",
+      "type": "одиночный пропеллер",
+      "number": "D-ERKY",
+      "brand": "Piper",
+      "model": "Arrow III",
+      "pilots": []
+    },
+    {
+      "id": 8,
+      "code": "28R-7837213",
+      "type": "одиночный пропеллер",
+      "number": "SE-GVV",
+      "brand": "Piper",
+      "model": "PA-28R-201 Arrow III",
+      "pilots": []
+    },
+    {
+      "id": 9,
+      "code": "35319",
+      "type": "одиночный пропеллер",
+      "number": "N200ZX",
+      "brand": "Piper",
+      "model": "PA-28R-200 Arrow II",
+      "pilots": []
+    },
+    {
+      "id": 10,
+      "code": "EDDM",
+      "type": "одиночный пропеллер",
+      "number": "D-reg",
+      "brand": "Piper",
+      "model": "Arrow II",
+      "pilots": []
+    },
+    {
+      "id": 11,
+      "code": "GG837213",
+      "type": "одиночный пропеллер",
+      "number": "SGV",
+      "brand": "Piper",
+      "model": "Arrow III",
+      "pilots": []
     }
   ]
 }
