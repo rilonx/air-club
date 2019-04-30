@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {FormField} from "@app/shared/models/form-field";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
-import {Location} from "@angular/common";
-import {QueryStatus, Operations} from "@app/shared/enums";
+import {FormField} from '@app/shared/models/form-field';
+import {FormControl, FormGroup} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Location} from '@angular/common';
+import {QueryStatus, Operations} from '@app/shared/enums';
 
 @Component({
   selector: 'dynamic-form',
@@ -23,7 +23,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
 
   private form: FormGroup;
   private status: QueryStatus = QueryStatus.idle;
-  private submitted: boolean = false;
+  private submitted = false;
   private localModel: any;
 
   constructor(
@@ -41,7 +41,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
     });
   }
   ngOnChanges(changes: SimpleChanges) {
-    if(changes['errorMessage'] && changes['errorMessage'].currentValue && this.status === QueryStatus.pending) {
+    if (changes['errorMessage'] && changes['errorMessage'].currentValue && this.status === QueryStatus.pending) {
       this.status = QueryStatus.idle;
     }
   }
@@ -50,9 +50,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
     const group = {};
     this.localModel = Object.assign({}, this.model);
     this.fields.forEach((field: FormField) => {
-      group[field.name] = field.required ?
-        new FormControl(this.localModel[field.name], Validators.required) :
-        new FormControl(this.localModel[field.name])
+      group[field.name] = new FormControl(this.localModel[field.name], field.validators || []);
     });
     this.form = new FormGroup(group);
   }
@@ -82,8 +80,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   onSubmit() {
     if (this.operation === Operations.edit) {
       this.onSave();
-    }
-    else if (this.operation === Operations.create) {
+    } else if (this.operation === Operations.create) {
       this.onCreate();
     }
   }

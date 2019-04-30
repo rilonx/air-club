@@ -5,6 +5,7 @@ import { Operations } from '@app/shared/enums';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Pilot } from '@app/shared/models';
 import { PilotService } from '@app/shared/services/pilot.service';
+import {Validators} from '@angular/forms';
 
 @Component({
   selector: 'pilot',
@@ -28,36 +29,35 @@ export class PilotComponent implements OnInit {
         name: 'id',
         type: 'number',
         label: 'Id',
-        isId: true,
-        required: false
+        isId: true
       },
       {
         name: 'code',
         type: 'text',
         label: 'Код',
         isId: false,
-        required: true
+        validators: [Validators.required]
       },
       {
         name: 'number',
         type: 'text',
         label: 'Номер',
         isId: false,
-        required: true
+        validators: [Validators.required]
       },
       {
         name: 'fio',
         type: 'text',
         label: 'ФИО',
         isId: false,
-        required: true
+        validators: [Validators.required]
       },
       {
         name: 'address',
         type: 'text',
         label: 'Адрес',
         isId: false,
-        required: true
+        validators: [Validators.required]
       }
     ];
   }

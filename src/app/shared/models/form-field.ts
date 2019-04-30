@@ -3,5 +3,5 @@ export interface FormField {
   type: string;
   label: string;
   isId: boolean;
-  required: boolean;
+  validators?: any[];
 }

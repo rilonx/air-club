@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SelectPilotComponent } from '@app/shared/components/select-pilot/select-pilot.component';
 import { Pilot, Plane } from '@app/shared/models';
 import { PlaneService } from '@app/shared/services/plane.service';
+import {Validators} from '@angular/forms';
 
 @Component({
   selector: 'plane',
@@ -30,43 +31,42 @@ export class PlaneComponent implements OnInit {
         name: 'id',
         type: 'number',
         label: 'Id',
-        isId: true,
-        required: false
+        isId: true
       },
       {
         name: 'code',
         type: 'text',
         label: 'Код',
         isId: false,
-        required: true
+        validators: [Validators.required]
       },
       {
         name: 'type',
         type: 'text',
         label: 'Тип',
         isId: false,
-        required: true
+        validators: [Validators.required]
       },
       {
         name: 'number',
         type: 'text',
         label: 'Борт номер',
         isId: false,
-        required: true
+        validators: [Validators.required]
       },
       {
         name: 'brand',
         type: 'text',
         label: 'Марка',
         isId: false,
-        required: true
+        validators: [Validators.required]
       },
       {
         name: 'model',
         type: 'text',
         label: 'Модель',
         isId: false,
-        required: true
+        validators: [Validators.required]
       }
     ];
   }

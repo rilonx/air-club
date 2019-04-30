@@ -7,6 +7,7 @@ import { AirportService } from '@app/shared/services/airport.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SelectPlaneComponent } from '@app/shared/components/select-plane/select-plane.component';
 import {SelectPilotComponent} from '@app/shared/components/select-pilot/select-pilot.component';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'airport',
@@ -32,29 +33,28 @@ export class AirportComponent implements OnInit {
         name: 'id',
         type: 'number',
         label: 'Id',
-        isId: true,
-        required: false
+        isId: true
       },
       {
         name: 'code',
         type: 'text',
         label: 'Код',
         isId: false,
-        required: true
+        validators: [Validators.required]
       },
       {
         name: 'name',
         type: 'text',
         label: 'Наименование',
         isId: false,
-        required: true
+        validators: [Validators.required, Validators.maxLength(200)]
       },
       {
         name: 'address',
         type: 'text',
         label: 'Адрес',
         isId: false,
-        required: true
+        validators: [Validators.required]
       }
     ];
   }

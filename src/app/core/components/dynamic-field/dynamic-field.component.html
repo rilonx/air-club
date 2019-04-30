@@ -22,5 +22,10 @@
     <div *ngIf="form.get(field.name).hasError('required') && (submitted || form.get(field.name).touched)">
       Поле обязательное для заполнения
     </div>
+    <div *ngIf="form.get(field.name).hasError('maxlength') && (submitted || form.get(field.name).touched)">
+      Привышено допустимое количество символов - {{ form.get(field.name).getError('maxlength')['actualLength'] }}
+      / {{ form.get(field.name).getError('maxlength')['requiredLength'] }}
+    </div>
+
   </div>
 </div>
