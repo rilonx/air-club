@@ -38,7 +38,10 @@
       <td>{{ plane.brand }}</td>
       <td>{{ plane.model }}</td>
       <td style="text-align: right" *ngIf="!isRemoving">
-        <button class="btn btn-sm btn-danger" style="margin-right: 5px" (click)="removePlane(plane)">Удалить</button>
+        <button *isRole="['admin']"
+                (click)="removePlane(plane)"
+                class="btn btn-sm btn-danger"
+                style="margin-right: 5px">Удалить</button>
       </td>
       <td style="text-align: right" *ngIf="isRemoving">
         Удаление ...
@@ -71,7 +74,10 @@
       <td>{{ pilot.fio }}</td>
       <td>{{ pilot.address }}</td>
       <td style="text-align: right" *ngIf="!isRemoving">
-        <button class="btn btn-sm btn-danger" style="margin-right: 5px" (click)="removePilot(pilot)">Удалить</button>
+        <button *isRole="['admin']"
+                (click)="removePilot(pilot)"
+                class="btn btn-sm btn-danger"
+                style="margin-right: 5px">Удалить</button>
       </td>
       <td style="text-align: right" *ngIf="isRemoving">
         Удаление ...
