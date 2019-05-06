@@ -227,13 +227,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     return deletedIndex;
   }
   private filterCollectionByPage(request, collection): any[] {
-    const page = request.params['page'];
-    const pageSize = request.params['pageSize'];
+    const page = +request.params['page'];
+    const pageSize = +request.params['pageSize'];
     let result;
     if (page && pageSize) {
+      const from = (page - 1) * pageSize;
+      const to = from + pageSize - 1;
       result = collection.reduce((acc, cur, index) => {
-        const from = (page - 1) * pageSize;
-        const to = from + pageSize - 1;
         if (index >= from && index <= to) {
           acc.push(cur);
         }
